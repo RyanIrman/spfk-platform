@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+          http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1" metadata-complete="false">
+
+	<application>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+
+		<locale-config>
+			<default-locale>my</default-locale>
+		</locale-config>
+
+<!-- 		<message-bundle>messages</message-bundle> -->
+<!-- 		<resource-bundle> -->
+<!-- 			<base-name>messages</base-name> -->
+<!-- 			<var>msg</var> -->
+<!-- 		</resource-bundle> -->
+<!-- 		<message-bundle>system</message-bundle> -->
+<!-- 		<resource-bundle> -->
+<!-- 			<base-name>system</base-name> -->
+<!-- 			<var>system</var> -->
+<!-- 		</resource-bundle> -->
+
+<!-- 		<message-bundle>ValidationMessages</message-bundle> -->
+
+	</application>
+
+</faces-config>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="spfkPU" transaction-type="RESOURCE_LOCAL">
+		<!-- transaction-type="JTA"> -->
+		<mapping-file>META-INF/orm.xml</mapping-file>
+
+		<class>my.ftsm.spfk.common.domain.SenaraiKumpulan</class>
+		<class>my.ftsm.spfk.common.domain.SenaraiAhliKumpulan</class>
+		<class>my.ftsm.spfk.common.domain.Pengguna</class>
+		<class>my.ftsm.spfk.common.domain.Fakulti</class>
+		<class>my.ftsm.spfk.common.domain.PusatPengajian</class>
+		<class>my.ftsm.spfk.common.domain.KalendarSesiAkedemik</class>
+		<class>my.ftsm.spfk.common.domain.RunningNumber</class>
+		<class>my.ftsm.spfk.common.domain.Jabatan</class>
+		<class>my.ftsm.spfk.common.domain.Subjek</class>
+		<class>my.ftsm.spfk.common.domain.SubjekTerlibat</class>
+		<class>my.ftsm.spfk.common.domain.Semester</class>
+		<class>my.ftsm.spfk.common.domain.JadualSemester</class>
+		<class>my.ftsm.spfk.common.domain.RekodUrusan</class>
+		<class>my.ftsm.spfk.common.domain.MessageBox</class>
+	
+
+	</persistence-unit>
+</persistence>

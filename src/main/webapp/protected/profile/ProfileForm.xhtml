@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/homeTemplate.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="content">
+	
+	<h:form>
+	
+	    <p:panel id="profilePanel" header="My Account">
+        <h:panelGrid columns="3" cellpadding="10">
+            	<h:outputText
+                value="Name" style="width:50px;" />
+                <h:outputText
+                value=":" style="width:5px;" />
+                <h:outputText
+                value="Pn. Marini Abi Bakar" />
+                
+               	<h:outputText
+                value="Department" style="width:50px;" />
+                <h:outputText
+                value=":" style="width:5px;" />
+                <h:outputText
+                value="Pusat Pengajian Sains Komputer" />
+              
+                <h:outputText
+                value="Position" style="width:50px;" />
+                <h:outputText
+                value=":" style="width:5px;" />
+                <h:outputText
+                value="Lecturer" />
+                
+                <h:outputText
+                value="Contact No" style="width:50px;" />
+                <h:outputText
+                value=":" style="width:5px;" />
+                <h:outputText
+                value="(+603) 2032 2010" />
+                
+                 <h:outputText
+                value="Address" style="width:50px;" />
+                <h:outputText
+                value=":" style="width:5px;" />
+                <h:outputText
+                value="Blok G, 302" />
+        </h:panelGrid>
+    	</p:panel>
+    	<br/>
+    	<p:panel id="courseHistoryPanel" header="Course History Record">
+    	 <p:dataTable var="car" value="#{dtPaginatorView.cars}" rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15">
+        <p:column headerText="Bil">
+            <h:outputText value="1" />
+        </p:column>
+ 
+        <p:column headerText="Course Code">
+            <h:outputText value="TK 3012" />
+        </p:column>
+ 
+        <p:column headerText="Course Name">
+            <h:outputText value="Java Programming Language" />
+        </p:column>
+ 
+        <p:column headerText="Sesi Akademik">
+            <h:outputText value="2011 / 2013" />
+        </p:column>
+        
+          <p:column headerText="Semester">
+            <h:outputText value="1" />
+        </p:column>
+        
+            <p:column headerText="Info">
+             <p:commandButton update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">
+<!--                 <f:setPropertyActionListener value="#{car}" target="#{dtSelectionView.selectedCar}" /> -->
+            </p:commandButton>
+        </p:column>
+    </p:dataTable>
+    	
+    	</p:panel>
+    	
+    	    <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+            <p:panelGrid  columns="2"  columnClasses="label,value">
+                <f:facet name="header">
+                    <p:graphicImage name="demo/images/car/#{dtSelectionView.selectedCar.brand}-big.gif"/> 
+                </f:facet>
+ 
+                <h:outputText value="Bil:" />
+                <h:outputText value="1" />
+ 
+                <h:outputText value="Course:" />
+                <h:outputText value="TK3012 - Java Programming Language" />
+ 
+                <h:outputText value="Sesi Akademik:" />
+                <h:outputText value="2011 / 2012"/>
+ 
+                <h:outputText value="Price" />
+                <h:outputText value="Tiada" />
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+	
+	</h:form>
+	
+	</ui:define>
+	</ui:composition>

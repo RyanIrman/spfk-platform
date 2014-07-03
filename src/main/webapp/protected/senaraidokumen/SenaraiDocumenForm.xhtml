@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/homeTemplate.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="content">
+	
+	<h:form>
+	
+	    <p:panel id="senaraiDokumenPanel" header="Senarai Dokumen"  >
+	          <p:dataTable value="" var="item" rowIndexVar="row" id="dokumenTable">
+
+              
+            <p:column style="width:5px;">
+                <p:selectBooleanCheckbox value=""/>
+            </p:column>
+
+            <p:column style="width:10px;">
+                <f:facet name="header">
+							No
+						</f:facet>
+                <h:outputText value="#{row+1}" />
+            </p:column>
+            
+            <p:column style="width:50px;">
+                <f:facet name="header">
+							Document Name
+						</f:facet>
+                <h:outputText value="" />
+            </p:column>
+            
+            <p:column style="width:20px;">
+                <f:facet name="header">
+							Upload
+						</f:facet>
+                <h:outputText value="" />
+            </p:column>
+            
+              <p:column style="width:20px;">
+                <f:facet name="header">
+							File
+						</f:facet>
+                <h:outputText value="" />
+            </p:column>
+            
+              <p:column style="width:20px;">
+                <f:facet name="header">
+							Cacatan
+						</f:facet>
+                <h:outputText value="" />
+            </p:column>
+
+        </p:dataTable>
+
+<!--        <h:panelGroup layout="block" styleClass="buttonDiv"> -->
+<!--             <p:commandButton id="btnTambah" value="#{msg['add']}" rendered="#{cc.attrs.mb.mode == 1}" -->
+<!--                 action="#{cc.attrs.mb.onAddSemakan()}" update="@form" /> -->
+
+<!--             <p:tooltip for="btnTambah" value="#{msg['tooltips.tambah']}" showEffect="fade" hideEffect="fade" /> -->
+
+<!--             <p:commandButton id="btnHapus" value="#{msg['hapus']}" action="#{cc.attrs.mb.onRemoveSemakan()}" -->
+<!--                 update="@form" rendered="#{cc.attrs.mb.mode == 1}" /> -->
+
+          
+<!--             <p:commandButton value="#{msg['pilih.fail']}" rendered="#{cc.attrs.thumbnailList!=null}" -->
+<!--                 oncomplete="chooseFileModal.show();" /> -->
+<!--         </h:panelGroup> -->
+ 
+        </p:panel>
+	</h:form>
+	
+	</ui:define>
+	</ui:composition>

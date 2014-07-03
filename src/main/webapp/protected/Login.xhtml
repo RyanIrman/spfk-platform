@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/homeTemplate.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="content">
+
+		<h:form>
+		
+		 <p:panel id="horizontal" header="Profile" toggleOrientation="horizontal">
+        <h:panelGrid columns="2" cellpadding="10">
+<!--             <p:graphicImage name="demo/images/godfather/godfather1.jpg" /> -->
+            <h:outputText
+                value="The story begins as Don Vito Corleone..." />
+        </h:panelGrid>
+    </p:panel>
+		
+		</h:form>
+	</ui:define>
+</ui:composition>
