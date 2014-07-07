@@ -1,38 +1,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<ui:composition>
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse"
-			data-target=".sidebar-collapse">
-			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-			<span class="icon-bar"></span> <span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="/index.xhtml">
-			<img src="resources/images/logo/UKM_logo_4C_teks putih.gif" alt="UKM" height="100" width="250" />
-		</a>
-	</div>
-	<!-- /.navbar-header -->
+<body>
+	<ui:composition>
+		<h:form>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/index.xhtml"> #{msg['project.title']}</a>
+			</div>
+			<!-- /.navbar-header -->
 
-	<ul class="nav navbar-top-links navbar-right">
-		<!-- /.dropdown -->
-		<li class="dropdown"><a class="dropdown-toggle"
-			data-toggle="dropdown" href="#" style=" color: #FFF;"> welcome user<i class="fa fa-user fa-fw"></i>
-				<i class="fa fa-caret-down"></i>
-		</a>
-			<ul class="dropdown-menu dropdown-user">
-				<li><a href="#"><i class="fa fa-user fa-fw"></i> User
-						Profile</a></li>
-				<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
-				<li class="divider"></li>
-				<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>
-						Logout</a></li>
-			</ul> <!-- /.dropdown-user --></li>
-		<!-- /.dropdown -->
-	</ul>
-</ui:composition>
+			<ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown"><p:commandLink value="sign in"
+						styleClass="dropdown-toggle" onclick="PF('loginDlg').show();"
+						style="color: #fff;" /> <p:dialog widgetVar="loginDlg"
+						id="loginDlg" header="Please Sign In" width="25%">
+						<h:panelGroup layout="block" styleClass="form-group">
+							<p:inputText styleClass="form-control" value="admin"
+								id="username" label="#{msg['username']}" />
+						</h:panelGroup>
+						<h:panelGroup layout="block" styleClass="form-group">
+							<p:password styleClass="form-control" value="password"
+								id="password" label="#{msg['password']}" />
+						</h:panelGroup>
+						<p:commandButton value="#{msg['sign-in-btn']}" />
+					</p:dialog></li>
+			</ul>
+		</h:form>
+	</ui:composition>
+</body>
 </html>
 

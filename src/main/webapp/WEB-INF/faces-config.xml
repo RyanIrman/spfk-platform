@@ -7,16 +7,16 @@
 
 	<application>
 		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
-
+		<resource-bundle>
+			<base-name>/resources</base-name>
+			<var>msg</var>
+		</resource-bundle>
 		<locale-config>
-			<default-locale>my</default-locale>
+			<default-locale>en</default-locale>
 		</locale-config>
 
 <!-- 		<message-bundle>messages</message-bundle> -->
-<!-- 		<resource-bundle> -->
-<!-- 			<base-name>messages</base-name> -->
-<!-- 			<var>msg</var> -->
-<!-- 		</resource-bundle> -->
+
 <!-- 		<message-bundle>system</message-bundle> -->
 <!-- 		<resource-bundle> -->
 <!-- 			<base-name>system</base-name> -->

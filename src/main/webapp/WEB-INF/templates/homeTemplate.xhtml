@@ -2,7 +2,8 @@
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<ui:insert name="header">
@@ -11,19 +12,15 @@
 </h:head>
 
 <h:body>
-	<div id="wrapper">
-		<nav class="navbar navbar-default navbar-fixed-top navbar-logo" role="navigation"
-			style="margin-bottom: 0">
-			
-			<!-- /Nav bar menu header -->
-			<ui:insert name="nav-header">
-				<ui:include src="nav-header.xhtml"> Header Menu </ui:include>
-			</ui:insert>
-			
-		</nav>
-		<div id="page-wrapper" style="margin: 68px 0 0 0;">
+	<p:outputPanel layout="block" styleClass="wrapper">
+		<nav class="navbar navbar-default navbar-fixed-top navbar-logo"
+			role="navigation" style="margin-bottom: 0"> <!-- /Nav bar menu header -->
+		<ui:insert name="nav-header">
+			<ui:include src="nav-header.xhtml"> Header Menu </ui:include>
+		</ui:insert> </nav>
+		<div id="page-wrapper" style="margin: 0px 0 0 0;">
 			<ui:insert name="content">Main Content</ui:insert>
 		</div>
-	</div>
+	</p:outputPanel>
 </h:body>
 </html>
