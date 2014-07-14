@@ -79,10 +79,14 @@ public class SubjekTerlibat extends BaseForEntity {
 	@JoinColumn(name = "SESI_ID")
 	private KalendarSesiAkedemik sesiAkademik;
 	
-//	@Getter
-//	@Setter
-//	@ManyToOne
-//	@JoinColumn(name = "SEM_ID")
-//	private Semester semester;
+	@Getter
+	@Setter
+	@ManyToOne
+	@JoinColumn(name = "SEM_ID")
+	private Semester semester;
 	
+	
+	public SubjekTerlibat(){
+		super();
+	}
 }

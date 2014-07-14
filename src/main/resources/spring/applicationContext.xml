@@ -27,6 +27,11 @@
 	</context:component-scan>
 
 	<context:annotation-config />
+	
+	
+	<bean id="applicationContextProvider"
+		class="my.ftsm.spfk.common.infrastructure.ApplicationContextProvider" />
+
 
 	<task:annotation-driven />
 	
@@ -65,6 +70,10 @@
 	<bean id="hibernateJpaVendorAdapter"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">		
 	</bean>
+	
+<!-- 	go through application event -->
+	<bean id="eventListenerBean" class="my.ftsm.spfk.common.service.ApplicationListenerBean" />
+	<!-- 		<description>call applicationListenerBean using applicationContextProvided to load data loader</description> -->
 	
 	<bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
     <property name="persistenceXmlLocations">

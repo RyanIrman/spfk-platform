@@ -9,6 +9,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
+import org.joda.time.DateTime;
+
 @MappedSuperclass
 public abstract class BaseForEntity implements Serializable {
 	
@@ -17,66 +19,68 @@ public abstract class BaseForEntity implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	@Version
-	@Column (name="VERSION", nullable=false)
-	private Long version;
-	
-	@Column (name="CREATE_BY")
-	private String createBy;
-	
-	@Column(name="CREATE_DATE")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date createDate;
+    @Version
+    @Column(name = "VERSION", nullable = false)
+    private Long version;
 
-	 @Column(name = "LAST_MODIFIED_BY")
-	  private String lastModifiedBy;
+    @Column(name = "CREATED_BY")
+    private String createdBy;
 
-	 @Column(name = "LAST_MODIFIED_DATE")
-	 @Temporal(TemporalType.TIMESTAMP)
-	 private Date lastModifiedDate;
+    @Column(name = "CREATED_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
+
+    @Column(name = "LAST_MODIFIED_BY")
+    private String lastModifiedBy;
+
+    @Column(name = "LAST_MODIFIED_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
 	
+	 public String getCreatedBy() {
+	        return null == createdBy ? null : "admin";
+	    }
+
+	 public void setCreatedBy(String createdBy) {
 	    
-	    
-	// Gatter and Setter
-	public Long getVersion() {
-		return version;
-	}
-
-	public void setVersion(Long version) {
-		this.version = version;
-	}
-
-	public String getCreateBy() {
-		return createBy;
-	}
-
-	public void setCreateBy(String createBy) {
-		this.createBy = createBy;
-	}
-
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
+	        this.createdBy =null == createdBy ? null : createdBy;
+	    }
 
 	public String getLastModifiedBy() {
-		return lastModifiedBy;
-	}
+	        return null == lastModifiedBy ? null : "admin";
+	    }
 
+	  
 	public void setLastModifiedBy(String lastModifiedBy) {
-		this.lastModifiedBy = lastModifiedBy;
-	}
+	        this.lastModifiedBy = null == lastModifiedBy ? null : lastModifiedBy;
+	    }
 
-	public Date getLastModifiedDate() {
-		return lastModifiedDate;
-	}
+	public Long getVersion() {
+	        return version;
+	    }
+
+	public void setVersion(Long version) {
+	        this.version = version;
+	    }
+
+	public void setCreatedDate(Date createdDate) {
+	    
+	        this.createdDate = null == createdDate ? null : createdDate;
+	    }
 
 	public void setLastModifiedDate(Date lastModifiedDate) {
-		this.lastModifiedDate = lastModifiedDate;
-	}
-	
+	    
+	        this.lastModifiedDate = null == lastModifiedDate ? null : lastModifiedDate;
+	    }
 
+	public Date getCreatedDate() {
+			
+			return null == createdDate ? null : new Date();
+		}
+
+	public Date getLastModifiedDate() {
+			return null == lastModifiedDate ? null : new Date() ;
+		}
+	    
+	    
 }

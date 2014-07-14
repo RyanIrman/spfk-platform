@@ -68,5 +68,6 @@ public class SenaraiKumpulan extends BaseForEntity {
     private String nilaiStr;
 	
 	public SenaraiKumpulan(){
+		super();
 	}
 }

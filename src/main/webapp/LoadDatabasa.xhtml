@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/homeTemplate.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<title>Data-Loader Form</title>
+</h:head>
+	<ui:param name="mb" value="#{loadDatabaseForm}" />
+	<ui:define name="content">
+
+		<div>
+			<h:form>
+			<p:commandButton id="bttnLoadData" value="Load Data" disabled="#{mb.disable eq true}" action="#{mb.load()}" update="@form" process="@this">
+<!-- 			<p:ajax event="click" ="#{mb.load()}" update="bttnLoadData" process="@this"/> -->
+			</p:commandButton>
+
+			</h:form>
+
+			<ui:debug hotkey="x" />
+		</div>
+	</ui:define>
+</ui:composition>
