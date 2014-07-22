@@ -332,6 +332,6 @@ table.dataTable thead .sorting:after {
 
 .navbar-logo{
 	background-color: #438eb9;
-	min-height: 117px !important;
+	min-height: 5%; !important;
 	position: absolute;
 }
