@@ -57,11 +57,13 @@ public class JadualSemester extends BaseForEntity {
 	@Setter
 	@ManyToOne
     @JoinColumn(name = "KALENDAR_AKADEMIK")
-     private KalendarSesiAkedemik kalendarSesiAkedemik;
+    @ForeignKey(name = "FK_TIJU_SESI_AKADEMIK")
+    private KalendarSesiAkedemik kalendarSesiAkedemik;
 	
+	@Getter
+	@Setter
     @ManyToOne
     @JoinColumn(name = "JNSPERIHAL_ID")
-    @ForeignKey(name = "FK_TIJU_JNS_PERIHAL")
     private SenaraiAhliKumpulan jenisPerihal;	
 	
 	@Getter
@@ -72,10 +74,12 @@ public class JadualSemester extends BaseForEntity {
 	@Getter
 	@Setter
 	@OneToOne
-	@JoinColumn(name = "SEM_ID", nullable=false)
+	@JoinColumn(name = "SEM_ID")
 	private Semester semester;
 	
 	public JadualSemester(){
+		
+		super();
 	}
 	
 }

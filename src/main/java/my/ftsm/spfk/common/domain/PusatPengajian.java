@@ -50,24 +50,24 @@ public class PusatPengajian extends BaseForEntity {
 	@Getter
 	@Setter
 	@Column(name = "KOD")
-    private String kodJabatan;
+    private String kodPusat;
 	
 	@Getter
 	@Setter
 	@Column(name = "NAMA")
-    private String namaJabatan;
+    private String namaPusat;
 	
 	@Getter
 	@Setter
 	@Column(name = "PERIHAL")
     private String perihal;
 	
-//	@Getter
-//	@Setter
-//	@ManyToOne
-//    @JoinColumn(name = "FAKULTI_ID")
-//    @ForeignKey(name = "FK_TIJU_FAKULTI")
-//	private Fakulti fakulti;
+	@Getter
+	@Setter
+	@ManyToOne
+    @JoinColumn(name = "FAKULTI_ID")
+    @ForeignKey(name = "FK_TIJU_FAKULTI")
+	private Fakulti fakulti;
 	
 	@Getter
 	@Setter

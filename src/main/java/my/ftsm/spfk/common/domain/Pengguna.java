@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
 import org.hibernate.annotations.Type;
 
 import lombok.Getter;
@@ -29,7 +30,23 @@ public class Pengguna extends BaseForEntity {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	public Pengguna(){
+		super();
+	}
 	
+	
+	public Pengguna(Boolean aktif, String namaPertama, String namaAkhir,
+			SenaraiAhliKumpulan role, String email, String kataLaluan) {
+		super();
+		this.aktif = aktif;
+		this.namaPertama = namaPertama;
+		this.namaAkhir = namaAkhir;
+		this.role = role;
+		this.email = email;
+		this.kataLaluan = kataLaluan;
+	}
+
+
 	@Getter
 	@Setter
 	@Id
@@ -38,6 +55,8 @@ public class Pengguna extends BaseForEntity {
     @Column(name = "PENGGUNA_ID")
 	private Long id;
 	
+	@Getter
+	@Setter
 	@Column(name = "AKTIF", nullable = false)
     @Type(type = "yes_no")
    	private Boolean aktif;
@@ -65,12 +84,14 @@ public class Pengguna extends BaseForEntity {
 	
 	@Getter
 	@Setter
-	@Column(name="JANTINA")
+	@ManyToOne
+	@JoinColumn(name="JANTINA")
 	private SenaraiAhliKumpulan jantina;
 	
 	@Getter
 	@Setter
-	@Column(name="ROLE")
+	@ManyToOne
+	@JoinColumn(name="ROLE")
 	private SenaraiAhliKumpulan role;
 	
 	
@@ -86,17 +107,25 @@ public class Pengguna extends BaseForEntity {
 	
 	@Getter
 	@Setter
-	@Column(name="JAWATAN")
+	@Column(name="NO_BILIK")
+	private String noBilik;
+	
+	@Getter
+	@Setter
+	@ManyToOne
+	@JoinColumn(name="JAWATAN")
 	private SenaraiAhliKumpulan jawatan;
 	
 	@Getter
 	@Setter
-	@Column(name="TITLE")
+	@ManyToOne
+	@JoinColumn(name="TITLE")
 	private SenaraiAhliKumpulan gelaran;
 	
 	@Getter
 	@Setter
-	@Column(name="BLOK_BGN")
+	@ManyToOne
+	@JoinColumn(name="BLOK_BGN")
 	private SenaraiAhliKumpulan blok;
 	
 //	@Getter
@@ -118,7 +147,6 @@ public class Pengguna extends BaseForEntity {
     
  
 	
-	public Pengguna(){
-		
-	}
+	
+
 }

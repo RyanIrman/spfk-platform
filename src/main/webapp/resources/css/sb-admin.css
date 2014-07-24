@@ -329,6 +329,7 @@ table.dataTable thead .sorting:after {
 }
 
 .navbar-logo{
+<<<<<<< HEAD
 	background-color: #f79263;
 }
 
@@ -347,3 +348,9 @@ table.dataTable thead .sorting:after {
 }
 
 /* end off overide css */
+=======
+	background-color: #438eb9;
+	min-height: 5%; !important;
+	position: absolute;
+}
+>>>>>>> 7db861ff21f97b903e74b4ea29c6348165a9669f

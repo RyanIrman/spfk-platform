@@ -91,6 +91,7 @@ public class KalendarSesiAkedemik extends BaseForEntity {
 
 	
 	public KalendarSesiAkedemik() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

@@ -78,7 +78,7 @@ public class SenaraiAhliKumpulan extends BaseForEntity {
 	@ManyToOne
     @JoinColumn(name = "SENARAI_KUMPULAN_ID")
     @ForeignKey(name = "FK_TRSAK_SENR_KUMPLN")
-    private SenaraiKumpulan senaraiKumpulan;
+    private SenaraiKumpulan senaraiKumpulan_Id;
 
 	
 	@Getter
@@ -92,5 +92,7 @@ public class SenaraiAhliKumpulan extends BaseForEntity {
     private List<SenaraiAhliKumpulan> childList = new ArrayList<SenaraiAhliKumpulan>();
 	
 	public SenaraiAhliKumpulan(){
+		
+		super();
 	}
 }
