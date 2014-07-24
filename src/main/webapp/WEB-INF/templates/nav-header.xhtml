@@ -5,7 +5,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
-<<<<<<< HEAD
+
 <body>
 	<ui:composition>
 		<h:form>
@@ -16,23 +16,9 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/index.xhtml"> #{msg['project.title']}</a>
+				<a class="navbar-brand" href="/index.xhtml"></a>
 			</div>
 			<!-- /.navbar-header -->
-=======
-<ui:composition>
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse"
-			data-target=".sidebar-collapse">
-			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-			<span class="icon-bar"></span> <span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="/index.xhtml">
-<!-- 			<img src="resources/images/logo/UKM_logo_4C_teks putih.gif" alt="UKM" height="100" width="250" /> -->
-		</a>
-	</div>
-	<!-- /.navbar-header -->
->>>>>>> 7db861ff21f97b903e74b4ea29c6348165a9669f
 
 			<ul class="nav navbar-top-links navbar-right">
 				<li class="dropdown"><p:commandLink value="sign in"
@@ -41,13 +27,13 @@
 						id="loginDlg" header="Please Sign In" width="25%">
 						<h:panelGroup layout="block" styleClass="form-group">
 							<p:inputText styleClass="form-control" value="admin"
-								id="username" label="#{msg['username']}" />
+								id="username" label="Username" />
 						</h:panelGroup>
 						<h:panelGroup layout="block" styleClass="form-group">
 							<p:password styleClass="form-control" value="password"
-								id="password" label="#{msg['password']}" />
+								id="password" label="Password" />
 						</h:panelGroup>
-						<p:commandButton value="#{msg['sign-in-btn']}" />
+						<p:commandButton value="Sign In" />
 					</p:dialog></li>
 			</ul>
 		</h:form>
